@@ -4,19 +4,21 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+jobs:
+- job: build_and_deploy
+  steps:
+    - script: echo Hello, world!
+      displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    - script: |
+        echo Add other tasks to build, test, and deploy your project.
+        echo See https://aka.ms/yaml
+      displayName: 'Run a multi-line script'
 
-# Tarea de despliegue a Azure Web App container
-- task: AzureWebAppContainer@1
-  inputs:
-    azureSubscription: 'AzureDevManager'  # Nombre de tu conexión de servicio Azure
-    appName: 'productosapp-fnemdff5ejejddes'  # El nombre de tu Web App
-    imageName: '$(productoAppDocker)'  # Nombre de la imagen que se va a desplegar
+    # Tarea de despliegue a Azure Web App container
+    - task: AzureWebAppContainer@1
+      inputs:
+        azureSubscription: 'AzureDevManager'  # Nombre de tu conexión de servicio Azure
+        appName: 'productosapp-fnemdff5ejejddes'  # El nombre de tu Web App
+        imageName: '$(productoAppDocker)'  # Nombre de la imagen que se va a desplegar
 
