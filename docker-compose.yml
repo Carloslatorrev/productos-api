@@ -1,0 +1,36 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: some-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: productosapp
+    ports:
+      - "5432:5432"
+    volumes:
+      - productos-db:/var/lib/postgresql/data  # Usar volumen externo con nombre
+    networks:
+      - productos-network
+
+  productos-api:
+    build: .
+    container_name: productos-api
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://some-postgres:5432/productosapp
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: admin
+    ports:
+      - "8080:8080"
+    networks:
+      - productos-network
+
+networks:
+  productos-network:
+    driver: bridge
+
+volumes:
+  productos-db:
+    external: true  # Definir como volumen externo
