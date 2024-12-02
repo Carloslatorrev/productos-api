@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   postgres:
     image: postgres:latest
@@ -10,6 +12,7 @@ services:
       - "5432:5432"
     volumes:
       - productos-db:/var/lib/postgresql/data  # Usar volumen externo con nombre
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Montar el script SQL para inicializar la base de datos
     networks:
       - productos-network
 
@@ -33,4 +36,3 @@ networks:
 
 volumes:
   productos-db:
-    external: true  # Definir como volumen externo
