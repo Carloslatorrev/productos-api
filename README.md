@@ -13,10 +13,10 @@ Contraseña: adminpassword
 
 #Endpoints
 
-URL: /api/productos
-METHOD: POST
-Descripción: Crea un nuevo producto en la base de datos.
-Cuerpo de la solicitud (ejemplo):
+#URL: /api/productos
+#METHOD: POST
+#Descripción: Crea un nuevo producto en la base de datos.
+#Cuerpo de la solicitud (ejemplo):
 
 {
 "nombre": "Producto 1",
@@ -25,10 +25,10 @@ Cuerpo de la solicitud (ejemplo):
 "categoria": "Electrónica"
 }
 
-URL: /api/productos
-Método: GET
-Descripción: Obtiene una lista de todos los productos en la base de datos.
-Respuesta (ejemplo):
+#URL: /api/productos
+#Método: GET
+#Descripción: Obtiene una lista de todos los productos en la base de datos.
+#Respuesta (ejemplo):
 
 [
     {
@@ -47,43 +47,43 @@ Respuesta (ejemplo):
     }
 ]
 
-URL: /api/productos/{id}
-Método: GET
-Descripción: Obtiene los detalles de un producto por su id.
-Respuesta (ejemplo):
+#URL: /api/productos/{id}
+#Método: GET
+#Descripción: Obtiene los detalles de un producto por su id.
+#Respuesta (ejemplo):
 
 {
-"id": 1,
-"nombre": "Producto 1",
-"descripcion": "Descripción del producto",
-"precio": 19.99,
-"categoria": "Categoría A"
+    "id": 1,
+    "nombre": "Producto 1",
+    "descripcion": "Descripción del producto",
+    "precio": 19.99,
+    "categoria": "Categoría A"
 }
 
-URL: /api/productos/{id}
-Método: PUT
-Descripción: Actualiza los detalles de un producto existente.
-Cuerpo de la solicitud (ejemplo):
+#URL: /api/productos/{id}
+#Método: PUT
+#Descripción: Actualiza los detalles de un producto existente.
+#Cuerpo de la solicitud (ejemplo):
 
 {
-"nombre": "Producto 1 actualizado",
-"descripcion": "Descripción actualizada",
-"precio": 24.99,
-"categoria": "Categoría A"
+    "nombre": "Producto 1 actualizado",
+    "descripcion": "Descripción actualizada",
+    "precio": 24.99,
+    "categoria": "Categoría A"
 }
 
 
-URL: /api/productos/{id}
-Método: DELETE
-Descripción: Elimina un producto por su id.
-Respuesta: 204 No Content (sin contenido)
+#URL: /api/productos/{id}
+#Método: DELETE
+#Descripción: Elimina un producto por su id.
+#Respuesta: 204 No Content (sin contenido)
 
-URL: /api/productos/buscar?nombre={nombre}
-Método: GET
-Descripción: Busca productos por su nombre (por coincidencia parcial).
-Parámetro de consulta:
-nombre: Nombre o parte del nombre del producto.
-Respuesta (ejemplo):
+#URL: /api/productos/buscar?nombre={nombre}
+#Método: GET
+#Descripción: Busca productos por su nombre (por coincidencia parcial).
+#Parámetro de consulta:
+    #nombre: Nombre o parte del nombre del producto.
+    #Respuesta (ejemplo):
 
 [
     {
@@ -95,10 +95,10 @@ Respuesta (ejemplo):
     }
 ]
 
-URL: /api/estadisticas
-Método: GET
-Descripción: Obtiene las estadísticas almacenadas en la base de datos.
-Respuesta (ejemplo):
+#URL: /api/estadisticas
+#Método: GET
+#Descripción: Obtiene las estadísticas almacenadas en la base de datos.
+#Respuesta (ejemplo):
 [
     {
     id: 1,
