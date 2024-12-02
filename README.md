@@ -19,10 +19,10 @@ Contraseña: adminpassword
 #Cuerpo de la solicitud (ejemplo):
 
 {
-"nombre": "Producto 1",
-"descripcion": "Descripción del producto",
-"precio": 19.99,
-"categoria": "Electrónica"
+    "nombre": "Producto 1",
+    "descripcion": "Descripción del producto",
+    "precio": 19.99,
+    "categoria": "Electrónica"
 }
 
 #URL: /api/productos
@@ -99,6 +99,7 @@ Contraseña: adminpassword
 #Método: GET
 #Descripción: Obtiene las estadísticas almacenadas en la base de datos.
 #Respuesta (ejemplo):
+
 [
     {
     id: 1,
