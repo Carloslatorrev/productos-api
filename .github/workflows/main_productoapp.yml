@@ -45,7 +45,7 @@ jobs:
         with:
           context: .  
           push: true  
-          tags: index.docker.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_CF76F88D92D045F89E62A516CD200C08 }}/dockerProductoApp:${{ github.sha }}  
+          tags: index.docker.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_CF76F88D92D045F89E62A516CD200C08 }}/dockerproductoapp:${{ github.sha }}  
           file: ./Dockerfile 
 
   deploy:
