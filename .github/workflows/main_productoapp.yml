@@ -58,6 +58,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'productosapp' 
-          slot-name: 'Production'  
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D22FA29FE16845B0A67873EFD82E8818 }} 
           images: 'index.docker.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_CF76F88D92D045F89E62A516CD200C08 }}/dockerProductoApp:${{ github.sha }}' 
